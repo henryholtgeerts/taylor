@@ -1,0 +1,202 @@
+:root {
+
+    /* Colors */
+
+    --primary: #222;
+    --primary-light: #333;
+    --primary-dark: #111;
+    --primary-text: #fff;
+
+    --secondary: #eee;
+    --secondary-light: #fff;
+    --secondary-dark: #ccc;
+    --secondary-text: #222;
+
+    --accent: cyan;
+    --accent-text: purple;
+
+
+    /* Typography */
+
+    --fontsize: 16px;
+    --bodyfont: "Courier New", Courier, monospace;
+    --headingfont: "Courier New", Courier, monospace;
+
+
+    /* Structure */
+
+    --sitewidth: 760px;
+    --sitewidth-wide: 1160px;
+}
+
+/*
+-- -- -- -- -- -- -- --
+Metaboxes
+-- -- -- -- -- -- -- --
+*/
+
+.taylor-metabox__row {
+    padding: 4px 0;
+}
+
+.taylor-metabox__subrow {
+    margin: 10px -14px 6px -14px;
+    padding: 4px 14px;
+    background: #f3f4f5;
+    border-top: 1px solid #e2e4e7;
+    border-bottom: 1px solid #e2e4e7;
+}
+
+/*
+-- -- -- -- -- -- -- --
+Blocks
+-- -- -- -- -- -- -- --
+*/
+
+.wp-block {
+    max-width: var(--sitewidth);
+}
+
+.wp-block[data-align=wide] {
+    max-width: var(--sitewidth-wide);
+}
+
+/*
+-- -- -- -- -- -- -- --
+Typography
+-- -- -- -- -- -- -- --
+*/
+
+/**
+ * Editor Normalization Styles
+ *
+ * These are only output in the editor, but styles here are prefixed .editor-styles-wrapper and affect the theming
+ * of the editor by themes.
+ * Why do these exist? Why not rely on browser defaults?
+ * These styles are necessary so long as CSS can bleed from the wp-admin into the editing canvas itself.
+ * Let's continue working to refactor these away, whether through Shadow DOM or better scoping of upstream styles.
+ */
+
+ .editor-post-title__block .editor-post-title__input,
+.editor-styles-wrapper {
+    font-family: var(--bodyfont) !important;
+    font-size: var(--fontsize);
+    line-height: 1.8;
+    color: var(--secondary-text) !important;
+}
+    
+/* Headings */
+
+.editor-post-title__block .editor-post-title__input,
+.editor-styles-wrapper h1 {
+    font-size: 2.44em;
+}
+    
+.editor-styles-wrapper h2 {
+    font-size: 1.95em;
+}
+    
+.editor-styles-wrapper h3 {
+    font-size: 1.56em;
+}
+    
+.editor-styles-wrapper h4 {
+    font-size: 1.25em;
+}
+    
+.editor-styles-wrapper h5 {
+    font-size: 1em;
+}
+    
+.editor-styles-wrapper h6 {
+    font-size: 0.8em;
+}
+    
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3 {
+    line-height: 1.4;
+}
+    
+.editor-styles-wrapper h4 {
+    line-height: 1.5;
+}
+    
+.editor-styles-wrapper h1 {
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+}
+    
+.editor-styles-wrapper h2 {
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+}
+    
+.editor-styles-wrapper h3 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+    
+.editor-styles-wrapper h4 {
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+}
+    
+.editor-styles-wrapper h5 {
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+}
+    
+    .editor-styles-wrapper h6 {
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+    }
+    
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+    color: inherit;
+}
+    
+.editor-styles-wrapper p {
+    font-size: inherit;
+    line-height: inherit;
+    margin-top: 28px;
+    margin-bottom: 28px;
+}
+    
+.editor-styles-wrapper ul,
+.editor-styles-wrapper ol {
+    margin-bottom: 28px;
+    padding: inherit;
+    padding-left: 1.3em;
+    margin-left: 1.3em;
+    }
+    
+.editor-styles-wrapper ul ul,
+.editor-styles-wrapper ul ol,
+.editor-styles-wrapper ol ul,
+.editor-styles-wrapper ol ol {
+    margin-bottom: 0;
+}
+    
+.editor-styles-wrapper ul li,
+.editor-styles-wrapper ol li {
+    margin-bottom: initial;
+}
+    
+.editor-styles-wrapper ul {
+    list-style-type: disc;
+}
+    
+.editor-styles-wrapper ol {
+    list-style-type: decimal;
+}
+    
+.editor-styles-wrapper ul ul,
+.editor-styles-wrapper ol ul {
+    list-style-type: circle;
+}

@@ -1,0 +1,491 @@
+/**
+Theme Name: Taylor
+Theme URI: https://henryholtgeerts.com/taylor
+Author: Henry Holtgeerts
+Author URI: https://henryholtgeerts.com
+Description: Taylor is a highly performant WP theme.
+Version: 0.0.1
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: taylor
+Domain Path: /languages
+*/
+
+/*
+-- -- -- -- -- -- -- --
+Default CSS Variables
+-- -- -- -- -- -- -- --
+*/
+
+:root {
+
+    /* Colors */
+
+    --primary: #222;
+    --primary-light: #333;
+    --primary-dark: #111;
+    --primary-text: #fff;
+
+    --secondary: #eee;
+    --secondary-light: #fff;
+    --secondary-dark: #ccc;
+    --secondary-text: #222;
+
+    --accent: cyan;
+    --accent-text: purple;
+
+
+    /* Typography */
+
+    --fontsize: 16px;
+    --bodyfont: "Courier New", Courier, monospace;
+    --headingfont: "Courier New", Courier, monospace;
+
+
+    /* Structure */
+
+    --sitewidth: 760px;
+    --sitewidth-wide: 1160px;
+}
+
+
+/*
+-- -- -- -- -- -- -- --
+Base Styles
+-- -- -- -- -- -- -- --
+*/
+
+html, body {
+    font-size: var(--fontsize);
+    color: var(--secondary-text);
+    font-family: var(--bodyfont);
+    background: var(--secondary);
+	margin: 0;
+	line-height: 1.8;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+
+/*
+-- -- -- -- -- -- -- --
+Typography
+-- -- -- -- -- -- -- --
+*/
+    
+/* Headings */
+    
+h1, .heading-size-1 {
+    font-size: 2.44em;
+}
+    
+h2, .heading-size-2 {
+    font-size: 1.95em;
+}
+    
+h3, .heading-size-3 {
+    font-size: 1.56em;
+}
+    
+h4, .heading-size-4 {
+    font-size: 1.25em;
+}
+    
+h5, .heading-size-5 {
+    font-size: 1em;
+}
+    
+h6, .heading-size-6 {
+    font-size: 0.8em;
+}
+    
+h1,
+.heading-size-1
+h2,
+.heading-size-2,
+h3,
+.heading-size-3 {
+    line-height: 1.4;
+}
+    
+h4, .heading-size-4 {
+    line-height: 1.5;
+}
+    
+h1 {
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+}
+    
+h2 {
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+}
+    
+h3 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+    
+h4 {
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+}
+    
+h5 {
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+}
+    
+h6 {
+    margin-top: 2.33em;
+    margin-bottom: 2.33em;
+}
+    
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: inherit;
+}
+    
+p {
+    font-size: inherit;
+    line-height: inherit;
+    margin-top: 28px;
+    margin-bottom: 28px;
+}
+    
+ul,
+ol {
+    margin-bottom: 28px;
+    padding: inherit;
+    padding-left: 1.3em;
+    margin-left: 1.3em;
+    }
+    
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    margin-bottom: 0;
+}
+    
+ul li,
+ol li {
+    margin-bottom: initial;
+}
+    
+.editor-styles-wrapper ul {
+    list-style-type: disc;
+}
+    
+ol {
+    list-style-type: decimal;
+}
+    
+ul ul,
+ol ul {
+    list-style-type: circle;
+}
+
+.title {
+	margin-bottom: 4rem !important;
+}
+
+em, i, q, dfn {
+	font-style: italic;
+}
+
+em em, em i, i em, i i, cite em, cite i {
+	font-weight: bolder;
+}
+
+big {
+	font-size: 1.2em;
+}
+
+small {
+	font-size: 0.75em;
+}
+
+b, strong {
+	font-weight: 700;
+}
+
+ins {
+	text-decoration: underline;
+}
+
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+abbr, acronym {
+	cursor: help;
+}
+
+address {
+	line-height: 1.5;
+	margin: 0 0 2rem 0;
+}
+
+hr, hr.styled-separator {
+	background: linear-gradient(to left, currentColor calc(50% - 16px), transparent calc(50% - 16px), transparent calc(50% + 16px), currentColor calc(50% + 16px));
+	background-color: transparent !important;
+	border: none;
+	height: 0.1rem;
+	overflow: visible;
+	position: relative;
+}
+
+hr:not(.has-background), hr.styled-separator {
+	color: var(--secondary);
+}
+
+hr::before, hr::after,
+hr.styled-separator::before, hr.styled-separator::after {
+	background: currentColor;
+	content: "";
+	display: block;
+	height: 1.6rem;
+	position: absolute;
+	top: calc(50% - 0.8rem);
+	transform: rotate(22.5deg);
+	width: 0.1rem;
+}
+
+hr::before, hr.styled-separator::before {
+	left: calc(50% - 0.5rem);
+}
+
+hr::after, hr.styled-separator::after {
+	right: calc(50% - 0.5rem);
+}
+
+a, a:visited {
+	color: var(--primary-light);
+	text-decoration: underline;
+}
+
+a:hover, a:focus {
+	text-decoration: none;
+}
+
+/*
+-- -- -- -- -- -- -- --
+Structure
+-- -- -- -- -- -- -- --
+*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.content > *,
+.container {
+    margin-right: auto;
+    margin-left: auto;
+	width: var(--sitewidth);
+	max-width: 90%;
+}
+
+.alignwide,
+.container--wide {
+	width: var(--sitewidth-wide);
+}
+
+.alignfull,
+.container--full {
+	width: 100%;
+	max-width: 100%;
+}
+
+
+/*
+-- -- -- -- -- -- -- --
+Header
+-- -- -- -- -- -- -- --
+*/
+
+header {
+    background: var(--primary);
+    color: var(--primary-text);
+}
+
+header.transparent {
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    background: none;
+}
+
+header h1, header h2 {
+    line-height: 1.2;
+    margin: 0;
+}
+
+header a, header a:visited {
+    color: var(--primary-text);
+    text-decoration: none;
+}
+
+header .branding {
+    display: flex;
+    align-items: center;
+}
+
+header .branding.branding--stacked {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+header .branding .name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0 1rem 0 0;
+}
+
+header .branding .description {
+    padding: 0.2rem 0;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 0;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+header nav li {
+    padding: 0;
+    margin: 1rem;
+    font-weight: 500;
+}
+
+
+/*
+-- -- -- -- -- -- -- --
+Main
+-- -- -- -- -- -- -- --
+*/
+
+main {
+    padding: 3.5rem 0 5rem 0;
+}
+
+main.top-spacing-removed {
+    padding-top: 0;
+}
+
+main.bottom-spacing-removed {
+    padding-bottom: 0;
+}
+
+
+/*
+-- -- -- -- -- -- -- --
+Footer
+-- -- -- -- -- -- -- --
+*/
+
+footer {
+    background: var(--primary-dark);
+    color: var(--primary-text);
+    padding: 3.5rem 0;
+}
+
+footer a, footer a:visited {
+    color: var(--primary-text);
+    text-decoration: none;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+/*	11. Entry Content
+/* -------------------------------------------------------------------------- */
+
+.content > *:first-child {
+	margin-top: 0;
+}
+
+.content > *:last-child {
+	margin-bottom: 0;
+}
+
+.content a:hover,
+.content a:focus {
+	text-decoration: none;
+}
+
+.content p,
+.content li {
+	line-height: 1.4;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+	margin: 3.5rem auto 2rem;
+}
+
+.content ul ul,
+.content ol ol,
+.content ul ol,
+.content ol ul {
+	margin-bottom: 1rem;
+}
+
+.content hr {
+	margin: 4rem auto;
+}
+
+/* Font Families ----------------------------- */
+
+.content {
+	font-family: var(--bodyfont);
+	letter-spacing: normal;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6,
+.content cite,
+.content figcaption,
+.content table,
+.content address,
+.content .wp-caption-text,
+.content .wp-block-file {
+	font-family: var(--headingfont);
+}
