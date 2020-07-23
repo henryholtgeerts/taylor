@@ -5,9 +5,10 @@ get_header();
 ?>
 
 <main role="main">
-
-    <h3>Error 404</h3>
-    
+    <div class="container">
+        <h1>Error 404</h1>
+        <p>Uh oh!</p>
+    </div>
 </main>
 
 <?php

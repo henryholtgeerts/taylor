@@ -34,6 +34,9 @@ Default CSS Variables
     --accent: cyan;
     --accent-text: purple;
 
+    --headerbackgroundcolor: #222;
+    --headerprimarycolor: #fff;
+
 
     /* Typography */
 
@@ -41,6 +44,12 @@ Default CSS Variables
     --bodyfont: "Courier New", Courier, monospace;
     --headingfont: "Courier New", Courier, monospace;
 
+    --h1fontsize: 48px;
+    --h2fontsize: 40px;
+    --h3fontsize: 32px;
+    --h4fontsize: 26px;
+    --h5fontsize: 20px;
+    --h6fontsize: 16px;
 
     /* Structure */
 
@@ -75,27 +84,27 @@ Typography
 /* Headings */
     
 h1, .heading-size-1 {
-    font-size: 2.44em;
+    font-size: var(--h1fontsize);
 }
     
 h2, .heading-size-2 {
-    font-size: 1.95em;
+    font-size: var(--h2fontsize);
 }
     
 h3, .heading-size-3 {
-    font-size: 1.56em;
+    font-size: var(--h3fontsize);
 }
     
 h4, .heading-size-4 {
-    font-size: 1.25em;
+    font-size: var(--h4fontsize);
 }
     
 h5, .heading-size-5 {
-    font-size: 1em;
+    font-size: var(--h5fontsize);
 }
     
 h6, .heading-size-6 {
-    font-size: 0.8em;
+    font-size: var(--h6fontsize);
 }
     
 h1,
@@ -309,7 +318,9 @@ main {
 }
 
 .alignwide,
-.container--wide {
+.container--wide,
+.alignfull .wp-block-cover__inner-container, 
+.alignfull .wp-block-cover__inner-container {
 	width: var(--sitewidth-wide);
 }
 
@@ -327,8 +338,8 @@ Header
 */
 
 header {
-    background: var(--primary);
-    color: var(--primary-text);
+    background: var(--headerbackgroundcolor);
+    color: var(--headerprimarycolor);
 }
 
 header.transparent {
@@ -344,13 +355,14 @@ header h1, header h2 {
 }
 
 header a, header a:visited {
-    color: var(--primary-text);
+    color: var(--headerprimarycolor);
     text-decoration: none;
 }
 
 header .branding {
     display: flex;
     align-items: center;
+    line-height: 1.2;
 }
 
 header .branding.branding--stacked {
@@ -359,13 +371,15 @@ header .branding.branding--stacked {
 }
 
 header .branding .name {
-    font-size: 1.5rem;
+    font-size: var(--sitenamefontsize);
     font-weight: 600;
     padding: 0 1rem 0 0;
+    font-family: var(--sitenamefont);
 }
 
 header .branding .description {
     padding: 0.2rem 0;
+    font-family: var(--sitetaglinefont);
 }
 
 header .container {
@@ -385,6 +399,7 @@ header nav li {
     padding: 0;
     margin: 1rem;
     font-weight: 500;
+    font-family: var(--primarymenufont);
 }
 
 
@@ -486,6 +501,7 @@ footer a, footer a:visited {
 .content table,
 .content address,
 .content .wp-caption-text,
-.content .wp-block-file {
+.content .wp-block-file,
+.content .has-large-font-size {
 	font-family: var(--headingfont);
 }

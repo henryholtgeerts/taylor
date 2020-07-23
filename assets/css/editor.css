@@ -61,6 +61,19 @@ Blocks
     max-width: var(--sitewidth-wide);
 }
 
+.editor-post-title__block .editor-post-title__input {
+    font-family: var(--headingfont);
+}
+
+div[data-align="full"] .wp-block-cover-image .wp-block-cover__inner-container, 
+div[data-align="full"] .wp-block-cover .wp-block-cover__inner-container {
+	width: var(--sitewidth-wide);
+}
+
+div[data-align="full"] .wp-block {
+    max-width: 100%;
+}
+
 /*
 -- -- -- -- -- -- -- --
 Typography
@@ -77,9 +90,8 @@ Typography
  * Let's continue working to refactor these away, whether through Shadow DOM or better scoping of upstream styles.
  */
 
- .editor-post-title__block .editor-post-title__input,
 .editor-styles-wrapper {
-    font-family: var(--bodyfont) !important;
+    font-family: var(--bodyfont);
     font-size: var(--fontsize);
     line-height: 1.8;
     color: var(--secondary-text) !important;
@@ -157,8 +169,10 @@ Typography
 .editor-styles-wrapper h3,
 .editor-styles-wrapper h4,
 .editor-styles-wrapper h5,
-.editor-styles-wrapper h6 {
+.editor-styles-wrapper h6,
+.editor-styles-wrapper .has-large-font-size {
     color: inherit;
+    font-family: var(--headingfont);
 }
     
 .editor-styles-wrapper p {
@@ -166,6 +180,7 @@ Typography
     line-height: inherit;
     margin-top: 28px;
     margin-bottom: 28px;
+    font-family: var(--bodyfont);
 }
     
 .editor-styles-wrapper ul,

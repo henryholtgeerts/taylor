@@ -1,6 +1,7 @@
 <?php 
 
 $meta = get_post_meta( get_the_ID() );
+$taglineDisplay = esc_html( get_theme_mod('taylor_tagline_display') );
 
 ?>
 
@@ -30,11 +31,11 @@ $meta = get_post_meta( get_the_ID() );
 
             <div class="container container--wide">
 
-                <a href="<?php bloginfo('url'); ?>" class="branding branding--stacked">
+                <a href="<?php bloginfo('url'); ?>" class="branding branding--<?php if ( $taglineDisplay !== 'hidden') { echo $taglineDisplay; } ?>">
                     <div class="name">
                         <?php bloginfo( 'name' ); ?>
                     </div>
-                    <?php if ( $test ) : ?>
+                    <?php if ( $taglineDisplay !== 'hidden' ) : ?>
                     <div class="description">
                         <?php bloginfo( 'description' ); ?>
                     </div>

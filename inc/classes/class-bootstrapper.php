@@ -6,6 +6,7 @@ use Taylor\Admin;
 use Taylor\Frontend;
 use Taylor\Menus;
 use Taylor\Support;
+use Taylor\Customizer;
 
 class Bootstrapper {
 
@@ -13,13 +14,13 @@ class Bootstrapper {
 
         $this->setupMenus();
         $this->setupSupport();
+        $this->setupCustomizer();
 
         if ( is_admin() ) {
             $this->setupAdmin();
         } else {
             $this->setupFrontend();
-        }
-        
+        }        
     }
 
     protected function setupAdmin () {
@@ -40,6 +41,11 @@ class Bootstrapper {
     protected function setupSupport () {
         include_once( get_stylesheet_directory() . '/inc/classes/class-support.php' );
         (new Support)->init();
+    }
+
+    protected function setupCustomizer () {
+        include_once( get_stylesheet_directory() . '/inc/classes/class-customizer.php' );
+        (new Customizer)->init();
     }
 
 }
